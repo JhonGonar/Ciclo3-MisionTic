@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro</title>
     <link rel="stylesheet" href="estilos.css">
+    <script type="text/javascript" src="form.js"></script>
 </head>
 <body id="register-markup">
     <div id="menu_principal">
@@ -20,11 +21,13 @@
         <label for="campo1">Nombre completo</label>
         <input type="text" id="campo1" required><br>
 
-        <label for="campo2">Nombre de usuario</label>
-        <input type="text" id="campo2" required><br>
+        <label for="campoUsuario">Nombre de usuario</label>
+        <!-- id es requerimiento de sprint 2 -->
+        <input type="text" id="campoUsuario" value="" required><br>
 
-        <label for="campo3">Contraseña</label>
-        <input type="password" id="campo3" required><br>
+        <label for="campoContrasena">Contraseña</label>
+        <!-- id es requerimiento de sprint 2 -->
+        <input type="password" id="campoContrasena" value="" required><br>
 
         <label for="campo4">Confirmación de contraseña</label>
         <input type="password" id="campo4" required><br>
@@ -41,7 +44,7 @@
         <label for="campo8">Dirección de residencia</label>
         <input type="text" id="campo8" required><br>
 
-        <button type="submit" id="button_register">Registrar datos</button>
+        <button type="submit" id="button_register" onclick="pruebas()">Registrar datos</button>
     </div>
 </body>
 </html>
