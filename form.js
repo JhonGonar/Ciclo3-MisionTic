@@ -10,14 +10,7 @@ function validar_usuario(string){
         12 caracteres.
     */
     const RegularExpression = /^[A-Z]{1,1}[a-zA-Z0-9]{5,11}$/;
-    if (string.search(RegularExpression)){
-        console.log('False');
-        console.log(string);
-        return false;
-    }
-    console.log('True')
-    console.log(string);
-    return true;
+    return (RegularExpression.test(string));
 }
 function validar_contrasena(string){
     /*  Requerimento sprint 2
@@ -31,33 +24,16 @@ function validar_contrasena(string){
         ➢ Debe tener una longitud máxima de
         16 caracteres.  
     */
-    const RegularExpression2 = /^[A-Z]{1,1}[a-zA-Z0-9]{7,15}/;
-    
-    const RegularExpression3 = /[@!#_-]{1,}/;
-    if (RegularExpression3.test(string)){
-        console.log('Simbolos OK');
-        console.log(string);
-        /*return false;*/ 
-        if (string.search(RegularExpression2)){
-            console.log('largo OK') 
-            console.log(string);
-            return true;
-        }else{
-            console.log('true largo')
-            console.log(string);
-            return true;
-        }
-    }
-
-    if (string !=''){
-        console.log('no es null')
-        console.log(string);
-        return true;
+    const RegularExpression2 = /^[A-Z]{1,1}([a-zA-Z0-9@!#_-]{7,15})$/;
+    const RegularExpression3 = /[@!#_-]{1,}/; // Al menos uno de estos @!#_-
+    if (RegularExpression2.test(string)){ 
+        return (RegularExpression3.test(string));
     } else {
-        console.log('vacio')
-        return false;}
+        return (RegularExpression2.test(string));
+    }
     
 }
+//Función únicamente para pruebas, no es evaluada por el bot
 function pruebas (){
     const user = document.getElementById('campoUsuario').value;
     const pwd = document.getElementById('campoContrasena').value;
