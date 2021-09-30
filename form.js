@@ -40,5 +40,5 @@ function pruebas (){
     validar_usuario(user);
     validar_contrasena(pwd);
 }
-//module.exports.validar_usuario = validar_usuario;
-//module.exports.validar_contrasena = validar_contrasena;
+module.exports.validar_usuario = validar_usuario;
+module.exports.validar_contrasena = validar_contrasena;
