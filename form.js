@@ -37,8 +37,9 @@ function validar_contrasena(string){
 function pruebas (){
     const user = document.getElementById('campoUsuario').value;
     const pwd = document.getElementById('campoContrasena').value;
-    validar_usuario(user);
     validar_contrasena(pwd);
+    validar_usuario(user);
+    
 }
-module.exports.validar_usuario = validar_usuario;
 module.exports.validar_contrasena = validar_contrasena;
+module.exports.validar_usuario = validar_usuario;
