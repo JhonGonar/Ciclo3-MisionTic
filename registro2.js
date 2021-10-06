@@ -21,12 +21,30 @@ function caputureForm(e){
     }else {
         alert("no se aceptan más formularios");
         document.forms[0].reset();
+        //ordenarArreglo_Apellido(formsRepository); // Para pruebas
     }
 
 
     console.warn('added', {formsRepository})
 }
-
-
-
+//Funciones sprint 3
+function ordenarArreglo_Apellido(arreglo){
+    arreglo.sort(function (a, b) {
+        if (a.nombreCompleto > b.nombreCompleto) {
+          return 1;
+        }
+        if (a.nombreCompleto < b.nombreCompleto) {
+          return -1;
+        }
+        return 0;
+      });
+    return arreglo;
+    //retornarRegistroMedio(arreglo); // Para pruebas
+}
+function retornarRegistroMedio(args){
+    let index = args.length
+    return ((index % 2) == 0)?(args[(index/2)-1]):(args[(index-1)/2]);
+}
+module.exports.ordenarArreglo_Apellido = ordenarArreglo_Apellido();
+module.exports.retornarRegistroMedio = retornarRegistroMedio();
 
