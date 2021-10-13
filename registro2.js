@@ -1,50 +1,39 @@
-let formsRepository = [];
 
-
-document.getElementById('button_register').addEventListener('click', caputureForm);
-
-function caputureForm(e){
-    e.preventDefault();
-    let formInstance = {
-        nombreCompleto : document.getElementById('campo1').value,
-        nombreUsuario: document.getElementById('campoUsuario').value,
-        contrasena: document.getElementById('campoContrasena').value,
-        confContrasena: document.getElementById('campo4').value,
-        correoElectronico: document.getElementById('campo5').value,
-        confirCorreo: document.getElementById('campo6').value,
-        telefono: document.getElementById('campo7').value,
-        direccionResidencia: document.getElementById('campo8').value
-    }
-    if (formsRepository.length < 20) {
-        formsRepository.push(formInstance);
-        document.forms[0].reset();
-    }else {
-        alert("no se aceptan más formularios");
-        document.forms[0].reset();
-        //ordenarArreglo_Apellido(formsRepository); // Para pruebas
-    }
-
-
-    console.warn('added', {formsRepository})
-}
 //Funciones sprint 3
-function ordenarArreglo_Apellido(arreglo){
-    arreglo.sort(function (a, b) {
-        if (a.nombreCompleto > b.nombreCompleto) {
-          return 1;
-        }
-        if (a.nombreCompleto < b.nombreCompleto) {
-          return -1;
-        }
-        return 0;
-      });
-    return arreglo;
-    //retornarRegistroMedio(arreglo); // Para pruebas
+let registros = [];
+
+function ordenarArreglo_Apellido(){
+    let objeto = {
+        'nombre' : document.getElementById('campo1').value,
+        'usuario': document.getElementById('campo2').value,
+        'direccion': document.getElementById('campo8').value,
+        'Contrasena': document.getElementById('campo3').value,
+        'correo': document.getElementById('campo5').value,
+        'confirmacioncontrasena': document.getElementById('campo4').value,
+        'confirmacioncorreo': document.getElementById('campo6').value,
+        'telefono': document.getElementById('campo7').value
+    };
+    registros.push(objeto);
+    console.log("registro agregado");
+    if (registros.length > 1){
+        registros.sort(function (a, b) {
+            if (a.nombre > b.nombre) {
+              return 1;
+            }
+            if (a.nombre < b.nombre) {
+              return -1;
+            }
+            return 0;
+        });
+    }
+        console.log('registro ordenado')
+        return registros;
 }
 function retornarRegistroMedio(args){
+    args = registros;
     let index = args.length
     return ((index % 2) == 0)?(args[(index/2)-1]):(args[(index-1)/2]);
 }
-module.exports.ordenarArreglo_Apellido = ordenarArreglo_Apellido();
-module.exports.retornarRegistroMedio = retornarRegistroMedio();
-
+module.exports.registros = registros;
+module.exports.ordenarArreglo_Apellido = ordenarArreglo_Apellido;
+module.exports.retornarRegistroMedio = retornarRegistroMedio;
