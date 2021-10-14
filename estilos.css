@@ -38,7 +38,7 @@ a{
     text-decoration: none;
     color: inherit;
 }
-#form {
+/*#form {
     margin: 0;
     margin-top: 3rem;
     display: flex;
@@ -49,10 +49,10 @@ a{
     padding:3rem;
 
 }
-#form > *{
+/*#form > *{
     width: 40%;
-}
-input{
+}*/
+/*input{
     border: none;
     border-bottom: 1px solid darkcyan;
     height:2rem;
@@ -79,7 +79,7 @@ input:focus{
     background-color: white;
     color: black;
     border: 1px darkcyan solid;
-}
+}*/
 
 #index-main{
     /* background-image: url(./robot-2301646_1280.jpg); */
@@ -92,12 +92,12 @@ input:focus{
     text-align: center;
 
 }
+
+:-ms-fullscreen
 #register-markup{
 background-color:rgb(197, 221, 224);
 }
-.container{
-    
-}
+
 footer{
     background-color: black;
     color: mintcream;
@@ -107,4 +107,62 @@ footer{
     width: 100%;
     font-size:small;
 
+}
+
+/*-------------------------*/
+
+.text_contac > h1 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 36px;
+    text-align: center;
+    font-weight: 700;
+    color: white;
+}
+ .text_contac > p {
+    font-family: 'Oswald', sans-serif;
+    font-size: 20px;
+    text-align: center;
+    font-weight: 200;
+    color: white;
+}
+.texto_contacto  {
+    padding-top: 150px;
+    padding-bottom: 150px;
+    background-color: #000206;
+}
+.secc_contacto {
+    padding-top: 150px;
+    padding-bottom: 150px;
+}
+.form_upb .name_form > input {
+    width: 100%;
+    height: 39px;
+    position: relative;
+    top: -23px;
+    padding-left: 10px;
+    font-family: 'Oswald';
+    font-size: 18px;
+    font-weight: 200;
+}
+.boton_formulario {
+    margin-top: 20px;
+}
+.name_form {
+    height: 48px;
+}
+
+button#button_register {
+    background: #000206;
+    color: white;
+    width: 100%;
+    height: 40px;
+    border: none;
+}
+
+button#button_register:hover {
+    background: #5c7bbb;
+    color: white;
+    width: 100%;
+    height: 40px;
+    border: none;
 }
